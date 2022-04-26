@@ -21,3 +21,9 @@ enum Unit {
   kelvin,
   fahrenheit
 }
+
+getDouble(dynamic v) {
+  if (v.runtimeType == double) return v;
+  if (v.runtimeType == int) return v.toDouble();
+  throw Exception('Value: $v is not a valid numeric type');
+}
